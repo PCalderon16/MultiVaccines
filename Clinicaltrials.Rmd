@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
 require(tigerstats)
 require(knitr)
-newdata<- read.csv(file="clinicalTrial.csv")
+newdata<- read.csv(file="clinicalTrial2.csv")
 ```
 
 ```{r eval=FALSE}
@@ -60,7 +60,7 @@ fisher.test(table1, simulate.p.value = TRUE)
 Seeing that the p value of the chi-squared test above is very small, another test comparing two data at a time would be added to supplement the results. 
 
 ```{r}
-fisherXY = function(x, y, confL = 0, printAll=FALSE){
+fisherXY = function(x, y, confL = 0, printAll=TRUE){
   # Inputs: 
   #   x: factor variable, 2 levels
   #   y: factor variable, n levels
@@ -129,7 +129,7 @@ fisherXY = function(x, y, confL = 0, printAll=FALSE){
 fisherXY(newdata$infected,newdata$vaxStatus)
 ```
 
-
+Comparing two vaccination status at a time, we can see which vaccination status holds a better chance in preventing covid infection based on the p-values of each test. The p-values above confirms what has been observed earlier that people who get both the first and new vaccine have lower infection compared to getting no vaccines at all. Since the p-values of the tests above are low, we can claim that the first and new vaccine combined are better than getting either one of the vaccines and significantly much better than getting no vaccine of any kind. However, there is one test that had a high p-value, and that is the comparison between first&new and new. This means that these two vaccination status were not statistically different.  
 
 
 
