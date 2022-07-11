@@ -46,3 +46,12 @@ colPerc(table1)
 
 To find out if the previous bar charts would provide statistical significance, a new test summarized by the table above shows the actual numerical values of the percentages of infection among people with various vaccination status. As seen above, majority of the people who got infected with covid are those who did not get either of the two vaccine. Specifically, 62.70% of this population is made up of people who received no vaccines of any kind. Furthermore, the infection among people who got both the first and new vaccines is less than getting just one of the two vaccines. There are only 5.95% of people who got both the first and new vaccine who got infected with covid, which is a smaller value compared to the 19.44% for people who got the first vaccine and 11.90% for people who got the new vaccine only. Therefore, the numerical descriptive results show that there is less infection among people who got either or both the vaccines than none at all. 
 
+
+
+# Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
