@@ -20,8 +20,11 @@ newdata <- newdata %>%
 mutate(across(where(is.character), as.factor))
 ```
 
+# Descriptive Results
 
-# Graphical Descriptive Summary
+
+
+## Graphical Descriptive Results
 
 ```{r}
 barchartGC(~infected + vaxStatus,data=newdata)
@@ -29,4 +32,4 @@ barchartGC(~infected + vaxStatus,data=newdata, type="percent")
 
 ```
 
-
+The bar charts above show a graphical representation of the relationship between vaccination status and covid infection status among a group of people. Based on the charts, we can see that the frequency of testing positive of covid is significantly less among people who got the first vaccine, the new vaccine, and both the first and new vaccine. Meanwhile, for people who did not get either of the two vaccines, there is comparably a higher frequency and percentage of covid infection.  
